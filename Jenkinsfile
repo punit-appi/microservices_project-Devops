@@ -36,7 +36,7 @@ pipeline {
                     docker.build('welcome-service-image', './welcome-service')
 
                     // Run the welcome-service container on port 8083
-                    docker.image('welcome-service-image').run("-d --network ${DOCKER_NETWORK} -p 8085:8085")
+                    docker.image('welcome-service-image').run("-d --network ${DOCKER_NETWORK} -p 8086:8086")
                 }
             }
         }
@@ -47,7 +47,7 @@ pipeline {
                     docker.build('user-service-image', './user-service')
 
                     // Run the user-service container on port 8082
-                    docker.image('user-service-image').run("-d --network ${DOCKER_NETWORK} -p 8084:8084")
+                    docker.image('user-service-image').run("-d --network ${DOCKER_NETWORK} -p 8087:8087")
                 }
             }
         }
@@ -58,7 +58,7 @@ pipeline {
                     docker.build('auth-service-image', './auth-service')
 
                     // Run the auth-service container on port 8081
-                    docker.image('auth-service-image').run("-d --network ${DOCKER_NETWORK} -p 8083:8083")
+                    docker.image('auth-service-image').run("-d --network ${DOCKER_NETWORK} -p 8088:8088")
                 }
             }
         }
